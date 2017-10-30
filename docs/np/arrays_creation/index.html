@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Массивы Numpy - База знаний Python</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u041c\u0430\u0441\u0441\u0438\u0432\u044b Numpy";
+    var mkdocs_page_input_path = "np/arrays_creation.md";
+    var mkdocs_page_url = "/np/arrays_creation/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> База знаний Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Привет</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/marketing/">Задача о рекламе</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/souvenirs/">Задача о рюкзаке</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/normalvariate/">Случайное распределние</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform_hist/">Гистограмма равномерного распределения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform/">Равномерное распределение</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_slices/">Срезы массивов</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../boolean_logic/">Логические выражения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../broadcasting/">Broadcasting</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Массивы Numpy</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#numpy">Массивы Numpy</a></li>
+    
+
+    <li class="toctree-l2"><a href="#1d-array">1D array</a></li>
+    
+
+    <li class="toctree-l2"><a href="#2d-array">2D array</a></li>
+    
+
+    <li class="toctree-l2"><a href="#zeros">Zeros</a></li>
+    
+
+    <li class="toctree-l2"><a href="#ones">Ones</a></li>
+    
+
+    <li class="toctree-l2"><a href="#full">Full</a></li>
+    
+
+    <li class="toctree-l2"><a href="#arange">Arange</a></li>
+    
+
+    <li class="toctree-l2"><a href="#linspace">Linspace</a></li>
+    
+
+    <li class="toctree-l2"><a href="#random">Random</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../example_color_map/">Пример цветовой диаграммы</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../universal_functions/">Универсальные функции</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../aggregates/">Аггрегация данных</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_split_concat/">Конкатенация и разделение</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">База знаний Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Массивы Numpy</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="numpy">Массивы Numpy</h2>
+<p>Создание массивов с помощью numpy</p>
+<pre><code>&gt;&gt;&gt; import numpy as np
+</code></pre>
+<h2 id="1d-array">1D array</h2>
+<pre><code>&gt;&gt;&gt; np.array([1, 2, 3])
+array([1, 2, 3])
+</code></pre>
+<h2 id="2d-array">2D array</h2>
+<pre><code>&gt;&gt;&gt; np.array([[1, 2, 3],
+...           [4, 5, 6],
+...           [7, 8, 9]])
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+</code></pre>
+<h2 id="zeros">Zeros</h2>
+<pre><code>&gt;&gt;&gt; np.zeros(5, dtype=int)
+array([0, 0, 0, 0, 0])
+</code></pre>
+<h2 id="ones">Ones</h2>
+<pre><code>&gt;&gt;&gt; np.ones(3)
+array([ 1.,  1.,  1.])
+
+&gt;&gt;&gt; np.ones((3, 5), dtype=int)
+array([[1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1]])
+</code></pre>
+<h2 id="full">Full</h2>
+<pre><code>&gt;&gt;&gt; np.full((2, 2), 3.14)
+array([[ 3.14,  3.14],
+       [ 3.14,  3.14]])
+</code></pre>
+<h2 id="arange">Arange</h2>
+<pre><code>&gt;&gt;&gt; np.arange(0, 100, 20)
+array([ 0, 20, 40, 60, 80])
+</code></pre>
+<h2 id="linspace">Linspace</h2>
+<pre><code>&gt;&gt;&gt; np.linspace(0, 100, 5, dtype=int)
+array([  0,  25,  50,  75, 100])
+</code></pre>
+<h2 id="random">Random</h2>
+<pre><code>&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; np.random.random((3, 3))
+array([[ 0.4359949 ,  0.02592623,  0.54966248],
+       [ 0.43532239,  0.4203678 ,  0.33033482],
+       [ 0.20464863,  0.61927097,  0.29965467]])
+</code></pre>
+<p>Create a 3x3 array of normally distributed random values with mean 0 and standard deviation 1</p>
+<pre><code>&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; np.random.normal(0, 1, (3, 3))
+array([[-0.41675785, -0.05626683, -2.1361961 ],
+       [ 1.64027081, -1.79343559, -0.84174737],
+       [ 0.50288142, -1.24528809, -1.05795222]])
+
+&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; np.random.randint(1, 10, (2, 2))
+array([[9, 9],
+       [7, 3]])
+
+&gt;&gt;&gt; np.eye(3)
+array([[ 1.,  0.,  0.],
+       [ 0.,  1.,  0.],
+       [ 0.,  0.,  1.]])
+
+&gt;&gt;&gt; np.empty(3)
+array([ 1.,  1.,  1.])
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../example_color_map/" class="btn btn-neutral float-right" title="Пример цветовой диаграммы">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../broadcasting/" class="btn btn-neutral" title="Broadcasting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../broadcasting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../example_color_map/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

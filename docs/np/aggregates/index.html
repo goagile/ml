@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Аггрегация данных - База знаний Python</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u0410\u0433\u0433\u0440\u0435\u0433\u0430\u0446\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445";
+    var mkdocs_page_input_path = "np/aggregates.md";
+    var mkdocs_page_url = "/np/aggregates/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> База знаний Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Привет</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/marketing/">Задача о рекламе</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/souvenirs/">Задача о рюкзаке</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/normalvariate/">Случайное распределние</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform_hist/">Гистограмма равномерного распределения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform/">Равномерное распределение</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_slices/">Срезы массивов</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../boolean_logic/">Логические выражения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../broadcasting/">Broadcasting</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_creation/">Массивы Numpy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../example_color_map/">Пример цветовой диаграммы</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../universal_functions/">Универсальные функции</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Аггрегация данных</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">Аггрегация данных</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">Создание матрицы из векторов</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_3">Быстрая сумма элементов массива</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_4">Минимум и максимум</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_5">Аггрегаты для матриц</a></li>
+    
+
+    <li class="toctree-l2"><a href="#any-all">Any, All</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_6">Пример</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_split_concat/">Конкатенация и разделение</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">База знаний Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Аггрегация данных</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="_1">Аггрегация данных</h2>
+<pre><code>&gt;&gt;&gt; import numpy as np
+
+&gt;&gt;&gt; x = np.arange(1, 6)
+&gt;&gt;&gt; x
+array([1, 2, 3, 4, 5])
+
+&gt;&gt;&gt; np.add.reduce(x)
+15
+
+&gt;&gt;&gt; np.multiply.reduce(x)
+120
+
+&gt;&gt;&gt; np.add.accumulate(x)
+array([ 1,  3,  6, 10, 15], dtype=int32)
+
+&gt;&gt;&gt; np.multiply.accumulate(x)
+array([  1,   2,   6,  24, 120], dtype=int32)
+</code></pre>
+<h2 id="_2">Создание матрицы из векторов</h2>
+<pre><code>&gt;&gt;&gt; x = np.arange(1, 6)
+&gt;&gt;&gt; x
+array([1, 2, 3, 4, 5])
+&gt;&gt;&gt; y = np.array([2, 2, 2, 2, 2])
+&gt;&gt;&gt; np.multiply.outer(x, y)
+array([[ 2,  2,  2,  2,  2],
+       [ 4,  4,  4,  4,  4],
+       [ 6,  6,  6,  6,  6],
+       [ 8,  8,  8,  8,  8],
+       [10, 10, 10, 10, 10]])
+</code></pre>
+<h2 id="_3">Быстрая сумма элементов массива</h2>
+<pre><code>&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; big_array = np.random.rand(100000)
+&gt;&gt;&gt; int(np.sum(big_array))
+49922
+&gt;&gt;&gt; int(big_array.sum())
+49922
+</code></pre>
+<h2 id="_4">Минимум и максимум</h2>
+<pre><code>&gt;&gt;&gt; np.min(big_array)
+1.8354603294024052e-05
+&gt;&gt;&gt; big_array.min()
+1.8354603294024052e-05
+
+&gt;&gt;&gt; np.max(big_array)
+0.99998694190910009
+&gt;&gt;&gt; big_array.max()
+0.99998694190910009
+</code></pre>
+<h2 id="_5">Аггрегаты для матриц</h2>
+<pre><code>&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; m = np.random.random((3, 4))
+&gt;&gt;&gt; m
+array([[ 0.4359949 ,  0.02592623,  0.54966248,  0.43532239],
+       [ 0.4203678 ,  0.33033482,  0.20464863,  0.61927097],
+       [ 0.29965467,  0.26682728,  0.62113383,  0.52914209]])
+</code></pre>
+<p>Сумма</p>
+<pre><code>&gt;&gt;&gt; m.sum()
+4.7382861037704735
+&gt;&gt;&gt; m.sum(axis=0)
+array([ 1.15601738,  0.62308833,  1.37544494,  1.58373545])
+&gt;&gt;&gt; m.sum(axis=1)
+array([ 1.446906  ,  1.57462222,  1.71675788])
+</code></pre>
+<p>Максимум</p>
+<pre><code>&gt;&gt;&gt; m.max(axis=0)
+array([ 0.4359949 ,  0.33033482,  0.62113383,  0.61927097])
+</code></pre>
+<p>Минимум</p>
+<pre><code>&gt;&gt;&gt; m.min(axis=1)
+array([ 0.02592623,  0.20464863,  0.26682728])
+</code></pre>
+<p>Продукт</p>
+<pre><code>&gt;&gt;&gt; x = np.arange(1, 10).reshape([3, 3])
+&gt;&gt;&gt; x
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+&gt;&gt;&gt; x.prod()
+362880
+</code></pre>
+<h2 id="any-all">Any, All</h2>
+<pre><code>&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; b = np.array([np.random.randint(2) for _ in range(5)])
+&gt;&gt;&gt; b
+array([0, 1, 1, 0, 0])
+&gt;&gt;&gt; b.any()
+True
+&gt;&gt;&gt; b.all()
+False
+</code></pre>
+<h2 id="_6">Пример</h2>
+<pre><code>&gt;&gt;&gt; heights = np.array([189, 170, 189, 163, 183, 171, 185, 168, 173, 183, 173, 173, 175])
+&gt;&gt;&gt; heights.min()
+163
+&gt;&gt;&gt; heights.max()
+189
+&gt;&gt;&gt; heights.sum()
+2295
+&gt;&gt;&gt; heights.mean()
+176.53846153846155
+&gt;&gt;&gt; heights.std()
+8.0155174948383188
+&gt;&gt;&gt; np.percentile(heights, 25)
+171.0
+&gt;&gt;&gt; np.median(heights)
+173.0
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../arrays_split_concat/" class="btn btn-neutral float-right" title="Конкатенация и разделение">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../universal_functions/" class="btn btn-neutral" title="Универсальные функции"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../universal_functions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../arrays_split_concat/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

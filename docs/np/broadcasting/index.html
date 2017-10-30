@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Broadcasting - База знаний Python</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Broadcasting";
+    var mkdocs_page_input_path = "np/broadcasting.md";
+    var mkdocs_page_url = "/np/broadcasting/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> База знаний Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Привет</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/marketing/">Задача о рекламе</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/souvenirs/">Задача о рюкзаке</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/normalvariate/">Случайное распределние</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform_hist/">Гистограмма равномерного распределения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform/">Равномерное распределение</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_slices/">Срезы массивов</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../boolean_logic/">Логические выражения</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Broadcasting</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#broadcasting">Broadcasting</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_creation/">Массивы Numpy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../example_color_map/">Пример цветовой диаграммы</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../universal_functions/">Универсальные функции</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../aggregates/">Аггрегация данных</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_split_concat/">Конкатенация и разделение</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">База знаний Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Broadcasting</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="broadcasting">Broadcasting</h1>
+<p>Массивы одинакового размера складываются поэлементно.</p>
+<pre><code>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; a = np.array([1, 2, 3])
+&gt;&gt;&gt; b = np.array([2, 2, 2])
+&gt;&gt;&gt; a + b
+array([3, 4, 5])
+</code></pre>
+<p>Массивы складываются со скаляром поэлементно.</p>
+<pre><code>&gt;&gt;&gt; a + 1
+array([2, 3, 4])
+</code></pre>
+<p>Двумерные массивы складываются со скаляром.</p>
+<pre><code>&gt;&gt;&gt; c = np.array([
+...     [1, 2, 3],
+...     [2, 2, 2],
+...     [3, 2, 1]
+... ])
+
+&gt;&gt;&gt; c + 1
+array([[2, 3, 4],
+       [3, 3, 3],
+       [4, 3, 2]])
+</code></pre>
+<p>При сложениии двумерного массива и одномерного, получается двумерный массив</p>
+<pre><code>&gt;&gt;&gt; a
+array([1, 2, 3])
+
+&gt;&gt;&gt; m = np.ones((3, 3))
+&gt;&gt;&gt; m
+array([[ 1.,  1.,  1.],
+       [ 1.,  1.,  1.],
+       [ 1.,  1.,  1.]])
+&gt;&gt;&gt; m + a
+array([[ 2.,  3.,  4.],
+       [ 2.,  3.,  4.],
+       [ 2.,  3.,  4.]])
+</code></pre>
+<p>Сложение вектора-строки и вектора-столбца</p>
+<pre><code>&gt;&gt;&gt; a = np.arange(3)
+&gt;&gt;&gt; b = np.arange(3)[:, np.newaxis]
+&gt;&gt;&gt; a
+array([0, 1, 2])
+&gt;&gt;&gt; b
+array([[0],
+       [1],
+       [2]])
+&gt;&gt;&gt; a + b
+array([[0, 1, 2],
+       [1, 2, 3],
+       [2, 3, 4]])
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../arrays_creation/" class="btn btn-neutral float-right" title="Массивы Numpy">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../boolean_logic/" class="btn btn-neutral" title="Логические выражения"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../boolean_logic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../arrays_creation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Универсальные функции - База знаний Python</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u0438";
+    var mkdocs_page_input_path = "np/universal_functions.md";
+    var mkdocs_page_url = "/np/universal_functions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> База знаний Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Привет</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/marketing/">Задача о рекламе</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/souvenirs/">Задача о рюкзаке</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/normalvariate/">Случайное распределние</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform_hist/">Гистограмма равномерного распределения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform/">Равномерное распределение</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_slices/">Срезы массивов</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../boolean_logic/">Логические выражения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../broadcasting/">Broadcasting</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_creation/">Массивы Numpy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../example_color_map/">Пример цветовой диаграммы</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Универсальные функции</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">Универсальные функции</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_2">Операции с векторами и матрицами</a></li>
+        
+            <li><a class="toctree-l3" href="#abs">ABS</a></li>
+        
+            <li><a class="toctree-l3" href="#_3">Тригонометрия</a></li>
+        
+            <li><a class="toctree-l3" href="#_4">Экспонента</a></li>
+        
+            <li><a class="toctree-l3" href="#_5">Логарифм</a></li>
+        
+            <li><a class="toctree-l3" href="#_6">Вывод результатов вычислений в массив</a></li>
+        
+            <li><a class="toctree-l3" href="#_7">Вывод результатов вычислений в срез массива</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../aggregates/">Аггрегация данных</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_split_concat/">Конкатенация и разделение</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">База знаний Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Универсальные функции</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">Универсальные функции</h1>
+<h2 id="_2">Операции с векторами и матрицами</h2>
+<pre><code>&gt;&gt;&gt; import numpy as np
+</code></pre>
+<p>Вектор</p>
+<pre><code>&gt;&gt;&gt; x = np.arange(5)
+&gt;&gt;&gt; x
+array([0, 1, 2, 3, 4])
+</code></pre>
+<p>Умножение вектора на скаляр</p>
+<pre><code>&gt;&gt;&gt; x * 2
+array([0, 2, 4, 6, 8])
+
+&gt;&gt;&gt; y = np.array([2, 2, 2, 2, 2])
+&gt;&gt;&gt; y
+array([2, 2, 2, 2, 2])
+</code></pre>
+<p>Усножение вектора поэлементно</p>
+<pre><code>&gt;&gt;&gt; x * y
+array([0, 2, 4, 6, 8])
+</code></pre>
+<p>Возведение всех элементов матрицы в квадрат</p>
+<pre><code>&gt;&gt;&gt; a = np.arange(9).reshape((3, 3))
+&gt;&gt;&gt; a
+array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+
+&gt;&gt;&gt; a ** 2
+array([[ 0,  1,  4],
+       [ 9, 16, 25],
+       [36, 49, 64]])
+</code></pre>
+<p>Часть матричного уравнения</p>
+<pre><code>&gt;&gt;&gt; -(0.5 * a) ** 2
+array([[ -0.  ,  -0.25,  -1.  ],
+       [ -2.25,  -4.  ,  -6.25],
+       [ -9.  , -12.25, -16.  ]])
+</code></pre>
+<h2 id="abs">ABS</h2>
+<p>Модули всех элементов вектора</p>
+<pre><code>&gt;&gt;&gt; z = np.arange(-5, 0)
+&gt;&gt;&gt; z
+array([-5, -4, -3, -2, -1])
+&gt;&gt;&gt; abs(z)
+array([5, 4, 3, 2, 1])
+</code></pre>
+<p>Вектор комплексных чисел</p>
+<pre><code>&gt;&gt;&gt; c = np.array([1 - 1j, 2 - 1j, -5 + 1j])
+&gt;&gt;&gt; c
+array([ 1.-1.j,  2.-1.j, -5.+1.j])
+&gt;&gt;&gt; abs(c)
+array([ 1.41421356,  2.23606798,  5.09901951])
+</code></pre>
+<h2 id="_3">Тригонометрия</h2>
+<pre><code>&gt;&gt;&gt; theta = np.linspace(0, np.pi, 3)
+&gt;&gt;&gt; theta
+array([ 0.        ,  1.57079633,  3.14159265])
+&gt;&gt;&gt; np.sin(theta)
+array([  0.00000000e+00,   1.00000000e+00,   1.22464680e-16])
+</code></pre>
+<h2 id="_4">Экспонента</h2>
+<pre><code>&gt;&gt;&gt; x = np.array([1, 2, 3])
+&gt;&gt;&gt; np.exp(x)
+array([  2.71828183,   7.3890561 ,  20.08553692])
+&gt;&gt;&gt; np.exp2(x)
+array([ 2.,  4.,  8.])
+</code></pre>
+<h2 id="_5">Логарифм</h2>
+<pre><code>&gt;&gt;&gt; x = [1, 2, 4, 10]
+&gt;&gt;&gt; np.log(x)
+array([ 0.        ,  0.69314718,  1.38629436,  2.30258509])
+&gt;&gt;&gt; np.log2(x)
+array([ 0.        ,  1.        ,  2.        ,  3.32192809])
+&gt;&gt;&gt; np.log10(x)
+array([ 0.        ,  0.30103   ,  0.60205999,  1.        ])
+</code></pre>
+<h2 id="_6">Вывод результатов вычислений в массив</h2>
+<pre><code>&gt;&gt;&gt; x = np.arange(5)
+&gt;&gt;&gt; x
+array([0, 1, 2, 3, 4])
+&gt;&gt;&gt; y = np.empty(5)
+&gt;&gt;&gt; y
+array([ 0.,  0.,  0.,  0.,  0.])
+&gt;&gt;&gt; np.multiply(x, 10, out=y)
+array([  0.,  10.,  20.,  30.,  40.])
+&gt;&gt;&gt; y
+array([  0.,  10.,  20.,  30.,  40.])
+</code></pre>
+<h2 id="_7">Вывод результатов вычислений в срез массива</h2>
+<pre><code>&gt;&gt;&gt; y = np.zeros(10)
+&gt;&gt;&gt; y
+array([ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.])
+&gt;&gt;&gt; np.power(2, x, out=y[::2])
+array([  1.,   2.,   4.,   8.,  16.])
+&gt;&gt;&gt; y
+array([  1.,   0.,   2.,   0.,   4.,   0.,   8.,   0.,  16.,   0.])
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../aggregates/" class="btn btn-neutral float-right" title="Аггрегация данных">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../example_color_map/" class="btn btn-neutral" title="Пример цветовой диаграммы"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../example_color_map/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../aggregates/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

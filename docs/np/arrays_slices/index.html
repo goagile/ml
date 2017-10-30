@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Срезы массивов - База знаний Python</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u0421\u0440\u0435\u0437\u044b \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432";
+    var mkdocs_page_input_path = "np/arrays_slices.md";
+    var mkdocs_page_url = "/np/arrays_slices/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> База знаний Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Привет</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/marketing/">Задача о рекламе</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../optimization/souvenirs/">Задача о рюкзаке</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/normalvariate/">Случайное распределние</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform_hist/">Гистограмма равномерного распределения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform/">Равномерное распределение</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Срезы массивов</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">Срезы массивов</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../boolean_logic/">Логические выражения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../broadcasting/">Broadcasting</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_creation/">Массивы Numpy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../example_color_map/">Пример цветовой диаграммы</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../universal_functions/">Универсальные функции</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../aggregates/">Аггрегация данных</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../arrays_split_concat/">Конкатенация и разделение</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">База знаний Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Срезы массивов</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="_1">Срезы массивов</h2>
+<pre><code>&gt;&gt;&gt; import numpy as np
+
+&gt;&gt;&gt; x = np.arange(10)
+&gt;&gt;&gt; x[0]
+0
+&gt;&gt;&gt; x[::-1]
+array([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
+&gt;&gt;&gt; x[::2]
+array([0, 2, 4, 6, 8])
+&gt;&gt;&gt; x[::3]
+array([0, 3, 6, 9])
+
+&gt;&gt;&gt; np.random.seed(2)
+&gt;&gt;&gt; x = np.random.randint(10, size=(3, 3))
+&gt;&gt;&gt; x
+array([[8, 8, 6],
+       [2, 8, 7],
+       [2, 1, 5]])
+</code></pre>
+<p>Чтение строк в массив</p>
+<pre><code>&gt;&gt;&gt; x[0, :]
+array([8, 8, 6])
+
+&gt;&gt;&gt; x[1, :]
+array([2, 8, 7])
+
+&gt;&gt;&gt; x[2, :]
+array([2, 1, 5])
+</code></pre>
+<p>Чтение столбцов в массив (Все строки, нулевой столбец)</p>
+<pre><code>&gt;&gt;&gt; x[:, 0]
+array([8, 2, 2])
+</code></pre>
+<p>Все строки, 1-ый столбец</p>
+<pre><code>&gt;&gt;&gt; x[:, 1]
+array([8, 8, 1])
+</code></pre>
+<p>Все строки, 2-ой столбец</p>
+<pre><code>&gt;&gt;&gt; x[:, 2]
+array([6, 7, 5])
+</code></pre>
+<p>Срез одного столбца (Все строки, 1 столбец)</p>
+<pre><code>&gt;&gt;&gt; x[:, :1]
+array([[8],
+       [2],
+       [2]])
+</code></pre>
+<p>Срез двух столбцов (Все строки, 2 столбца)</p>
+<pre><code>&gt;&gt;&gt; x[:, :2]
+array([[8, 8],
+       [2, 8],
+       [2, 1]])
+
+&gt;&gt;&gt; x[:2, :]
+array([[8, 8, 6],
+       [2, 8, 7]])
+
+&gt;&gt;&gt; x[:2, :2]
+array([[8, 8],
+       [2, 8]])
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../boolean_logic/" class="btn btn-neutral float-right" title="Логические выражения">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../examples/uniform/" class="btn btn-neutral" title="Равномерное распределение"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../examples/uniform/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../boolean_logic/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

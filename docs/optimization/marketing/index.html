@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Задача о рекламе - База знаний Python</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u0417\u0430\u0434\u0430\u0447\u0430 \u043e \u0440\u0435\u043a\u043b\u0430\u043c\u0435";
+    var mkdocs_page_input_path = "optimization/marketing.md";
+    var mkdocs_page_url = "/optimization/marketing/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> База знаний Python</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Привет</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Задача о рекламе</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">Задача о рекламе</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../souvenirs/">Задача о рюкзаке</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/normalvariate/">Случайное распределние</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform_hist/">Гистограмма равномерного распределения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/uniform/">Равномерное распределение</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/arrays_slices/">Срезы массивов</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/boolean_logic/">Логические выражения</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/broadcasting/">Broadcasting</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/arrays_creation/">Массивы Numpy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/example_color_map/">Пример цветовой диаграммы</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/universal_functions/">Универсальные функции</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/aggregates/">Аггрегация данных</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../np/arrays_split_concat/">Конкатенация и разделение</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">База знаний Python</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Задача о рекламе</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="_1">Задача о рекламе</h2>
+<p>Задача линейного программирования.</p>
+<p>Дано:
+    Радио реклама: $5 за минуту
+    Теле реклама: $30 за минуту
+    Компания использует Радио рекламу в 3 раза чаще чем Теле реламу
+    1 минута Теле рекламы приносит продаж в 30 раз больше чем 1 минута Радио рекламы</p>
+<p>Переменные:  <br />
+    x1 - количество запусков Теле Рекламы
+    x2 - количество запусков Радио рекламы</p>
+<p>Целевая функция: 
+    $30 x1 + x2</p>
+<p>Ограничение по буджету: 
+    $90 x1 + $5 x2 &lt;= $10000    </p>
+<p>Соотношение времени показа:
+    x2 = 3 x1</p>
+<p>Найти значения переменных x1, x2, при которых целевая функция будет максимальна</p>
+<pre><code>&gt;&gt;&gt; import pulp
+
+&gt;&gt;&gt; problem = pulp.LpProblem('Увеличние продаж', pulp.LpMaximize)
+
+&gt;&gt;&gt; x1 = pulp.LpVariable('x1', 0)
+&gt;&gt;&gt; x2 = pulp.LpVariable('x2', 0)
+
+&gt;&gt;&gt; problem += 30 * x1 + x2, 'Целевая функция. Максимальное количество продаж'
+&gt;&gt;&gt; problem += 90 * x1 + 5 * x2 &lt;= 10000, 'Ограничение по бюджету'
+&gt;&gt;&gt; problem += x2 == 3 * x1, 'Соотношение времени показа'
+&gt;&gt;&gt; problem.solve()
+1
+
+&gt;&gt;&gt; pulp.LpStatus[problem.status]
+'Optimal'
+</code></pre>
+<p>Значения переменных:</p>
+<pre><code>&gt;&gt;&gt; for v in problem.variables():
+...     '{}={}'.format(v.name, v.varValue)
+'x1=95.238095'
+'x2=285.71429'
+</code></pre>
+<p>Значение целефой функции:</p>
+<pre><code>&gt;&gt;&gt; pulp.value(problem.objective)
+3142.85714
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../souvenirs/" class="btn btn-neutral float-right" title="Задача о рюкзаке">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Привет"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../souvenirs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

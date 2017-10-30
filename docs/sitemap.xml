@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/optimization/marketing/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/optimization/souvenirs/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/examples/normalvariate/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/examples/uniform_hist/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/examples/uniform/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/arrays_slices/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/boolean_logic/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/broadcasting/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/arrays_creation/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/example_color_map/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/universal_functions/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/aggregates/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/np/arrays_split_concat/</loc>
+     <lastmod>2017-10-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>
