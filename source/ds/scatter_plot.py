@@ -7,4 +7,5 @@ if __name__ == "__main__":
     plt.scatter(x, y)
     for x, y, z in zip(x, y, z):
         plt.annotate(z, xy=(x, y), xytext=(5, -15), textcoords="offset points")
+    plt.axis("equal")
     plt.show()
