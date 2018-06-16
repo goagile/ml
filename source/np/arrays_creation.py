@@ -37,7 +37,7 @@ Ones
 ----
 
     >>> np.ones(3)
-    array([ 1.,  1.,  1.])
+    array([1., 1., 1.])
     
     >>> np.ones((3, 5), dtype=int)
     array([[1, 1, 1, 1, 1],
@@ -48,8 +48,8 @@ Full
 ----
 
     >>> np.full((2, 2), 3.14)
-    array([[ 3.14,  3.14],
-           [ 3.14,  3.14]])
+    array([[3.14, 3.14],
+           [3.14, 3.14]])
 
 Arange
 ------
@@ -68,9 +68,9 @@ Random
 
     >>> np.random.seed(2)
     >>> np.random.random((3, 3))
-    array([[ 0.4359949 ,  0.02592623,  0.54966248],
-           [ 0.43532239,  0.4203678 ,  0.33033482],
-           [ 0.20464863,  0.61927097,  0.29965467]])
+    array([[0.4359949 , 0.02592623, 0.54966248],
+           [0.43532239, 0.4203678 , 0.33033482],
+           [0.20464863, 0.61927097, 0.29965467]])
 
 Create a 3x3 array of normally distributed random values with mean 0 and standard deviation 1
 
@@ -86,12 +86,12 @@ Create a 3x3 array of normally distributed random values with mean 0 and standar
            [7, 3]])
 
     >>> np.eye(3)
-    array([[ 1.,  0.,  0.],
-           [ 0.,  1.,  0.],
-           [ 0.,  0.,  1.]])
+    array([[1., 0., 0.],
+           [0., 1., 0.],
+           [0., 0., 1.]])
 
     >>> np.empty(3)
-    array([ 1.,  1.,  1.])
+    array([1., 1., 1.])
     
     
 """
