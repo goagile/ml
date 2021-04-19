@@ -1,2 +1,2 @@
 # ml
-Machine learning exercises and solutions
+Machine learning exercises
